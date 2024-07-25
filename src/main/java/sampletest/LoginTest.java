@@ -12,7 +12,7 @@ public class LoginTest {
 	@Test
 	public void login() throws InterruptedException {
 		WebDriver driver = new ChromeDriver();
-		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
 		System.out.println("browsered opening");
 		driver.get("http://localhost:8080/aeui");
 		System.out.println("browsered opened");
@@ -23,6 +23,7 @@ public class LoginTest {
 		driver.findElement(By.xpath("//*[@id='pswd']")).sendKeys("Admin@123");
 		System.out.println("password typed");
 		System.out.println("clicking on login");
+		Thread.sleep(5000);
 		driver.findElement(By.xpath("//*[@id='signin1']")).click();
 		System.out.println("clicked on login");
 		Thread.sleep(5000);
